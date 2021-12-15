@@ -59,7 +59,6 @@ src/typings/
 
 # gatsby files
 .cache/
-public
 
 # next files
 .next
