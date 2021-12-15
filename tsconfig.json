@@ -57,6 +57,11 @@
     "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */,
     "lib": ["dom", "dom.iterable", "esnext"]
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "@generated/**/*.ts"],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "@generated/**/*.ts",
+    "next-env.d.ts"
+  ],
   "exclude": ["node_modules", "public"]
 }
