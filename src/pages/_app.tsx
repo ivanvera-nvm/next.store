@@ -36,7 +36,7 @@ function App({ Component, pageProps }: AppProps) {
                 mode="optimistic"
                 onValidateCart={validateCart as any} // TODO: fix here
               >
-                <NProgress />
+                <NProgress color="#E31C58" />
                 <Layout>
                   <DefaultSeo
                     defaultTitle={title}
