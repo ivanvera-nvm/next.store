@@ -66,7 +66,7 @@ export const getItemId = (
 ) => `${item.itemOffered.sku}:${item.seller.identifier}:${item.price}`
 
 export const validateCart = async <Item extends CartItem>(cart: Cart<Item>) => {
-  const { validateCart: validated } = await request<
+  const { validateCart: validated = null } = await request<
     ValidateCartMutationMutation,
     ValidateCartMutationMutationVariables
   >(ValidateCartMutation, {

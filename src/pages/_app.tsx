@@ -2,8 +2,8 @@ import 'src/styles/global.css'
 
 import { CartProvider, SessionProvider, UIProvider } from '@faststore/sdk'
 import { DefaultSeo, SiteLinksSearchBoxJsonLd } from 'next-seo'
-import React from 'react'
 import NProgress from 'nextjs-progressbar'
+import React from 'react'
 import type { AppProps } from 'next/app'
 
 import Layout from 'src/Layout'
@@ -13,6 +13,7 @@ import ErrorBoundary from 'src/sdk/error/ErrorBoundary'
 import TestProvider from 'src/sdk/tests'
 import { uiActions, uiEffects, uiInitialState } from 'src/sdk/ui'
 import { useSiteUrl } from 'src/sdk/useSiteUrl'
+import type { CartItem } from 'src/sdk/cart/validate'
 
 import storeConfig from '../../store.config'
 
@@ -33,9 +34,9 @@ function App({ Component, pageProps }: AppProps) {
             effects={uiEffects}
           >
             <SessionProvider initialState={{ channel: storeConfig.channel }}>
-              <CartProvider
+              <CartProvider<CartItem>
                 mode="optimistic"
-                onValidateCart={validateCart as any} // TODO: fix here
+                onValidateCart={validateCart}
               >
                 <NProgress color="#E31C58" />
                 <Layout>
