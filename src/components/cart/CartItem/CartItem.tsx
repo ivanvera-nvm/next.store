@@ -1,6 +1,7 @@
 import React from 'react'
-import Button from 'src/components/ui/Button'
 import Image from 'next/image'
+
+import Button from 'src/components/ui/Button'
 import { useRemoveButton } from 'src/sdk/cart/useRemoveButton'
 import { useFormattedPrice } from 'src/sdk/product/useFormattedPrice'
 import type { AnalyticsCartItem } from 'src/sdk/analytics/types'

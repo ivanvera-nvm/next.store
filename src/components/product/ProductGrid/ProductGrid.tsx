@@ -1,4 +1,5 @@
 import React from 'react'
+
 import type { ProductSummary_ProductFragment } from '@generated/graphql'
 
 import ProductSummary from '../ProductSummary'

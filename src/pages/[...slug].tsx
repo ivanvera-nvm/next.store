@@ -3,17 +3,18 @@ import { gql } from '@vtex/graphql-utils'
 import { BreadcrumbJsonLd, NextSeo } from 'next-seo'
 import { useRouter } from 'next/router'
 import React, { useMemo } from 'react'
+import type { SearchState } from '@faststore/sdk'
+import type { GetStaticPaths, GetStaticProps } from 'next'
+
 import ProductGallery from 'src/components/sections/ProductGallery'
 import { ITEMS_PER_PAGE } from 'src/constants'
 import { useApplySearchState } from 'src/sdk/search/state'
 import { useSiteUrl } from 'src/sdk/useSiteUrl'
 import { execute } from 'src/server'
-import type { SearchState } from '@faststore/sdk'
 import type {
   CollectionPageQueryQuery,
   CollectionPageQueryQueryVariables,
 } from '@generated/graphql'
-import type { GetStaticPaths, GetStaticProps } from 'next'
 
 const useSearchParams = (props: CollectionPageQueryQuery): SearchState => {
   const { collection } = props

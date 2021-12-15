@@ -1,5 +1,6 @@
 import { useSearch } from '@faststore/sdk'
 import React, { useMemo } from 'react'
+
 import ProductGrid from 'src/components/product/ProductGrid'
 import { useProductsQuery } from 'src/sdk/product/useProductsQuery'
 import Sentinel from 'src/sdk/search/Sentinel'

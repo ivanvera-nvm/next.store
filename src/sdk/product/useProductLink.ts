@@ -1,12 +1,13 @@
 import { useMemo } from 'react'
 import { useSession, sendAnalyticsEvent } from '@faststore/sdk'
-import type { ProductSummary_ProductFragment } from '@generated/graphql'
 import type {
   CurrencyCode,
   SelectItemEvent,
   SelectItemParams,
   Item,
 } from '@faststore/sdk'
+
+import type { ProductSummary_ProductFragment } from '@generated/graphql'
 
 export type ProductLinkOptions = {
   index: number

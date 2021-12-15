@@ -1,6 +1,7 @@
 import { useSearch } from '@faststore/sdk'
 import React, { useEffect, useRef } from 'react'
 import { useInView } from 'react-intersection-observer'
+
 import type { ProductSummary_ProductFragment } from '@generated/graphql'
 
 import { useViewItemListEvent } from '../analytics/hooks/useViewItemListEvent'

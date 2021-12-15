@@ -1,6 +1,7 @@
 import { gql } from '@vtex/graphql-utils'
 import Image from 'next/image'
 import React from 'react'
+
 import Button from 'src/components/ui/Button'
 import { useBuyButton } from 'src/sdk/cart/useBuyButton'
 import { useFormattedPrice } from 'src/sdk/product/useFormattedPrice'

@@ -1,6 +1,7 @@
 import { useSearch } from '@faststore/sdk'
 import { gql } from '@vtex/graphql-utils'
 import React, { useState } from 'react'
+
 import Button from 'src/components/ui/Button'
 import Checkbox from 'src/components/ui/Checkbox'
 import type { FacetedFilter_FacetsFragment } from '@generated/graphql'

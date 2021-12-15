@@ -3,6 +3,9 @@ import 'src/styles/global.css'
 import { CartProvider, SessionProvider, UIProvider } from '@faststore/sdk'
 import { DefaultSeo, SiteLinksSearchBoxJsonLd } from 'next-seo'
 import React from 'react'
+import NProgress from 'nextjs-progressbar'
+import type { AppProps } from 'next/app'
+
 import Layout from 'src/Layout'
 import AnalyticsHandler from 'src/sdk/analytics'
 import { validateCart } from 'src/sdk/cart/validate'
@@ -10,8 +13,6 @@ import ErrorBoundary from 'src/sdk/error/ErrorBoundary'
 import TestProvider from 'src/sdk/tests'
 import { uiActions, uiEffects, uiInitialState } from 'src/sdk/ui'
 import { useSiteUrl } from 'src/sdk/useSiteUrl'
-import NProgress from 'nextjs-progressbar'
-import type { AppProps } from 'next/app'
 
 import storeConfig from '../../store.config'
 
