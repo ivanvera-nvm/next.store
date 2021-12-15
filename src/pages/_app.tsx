@@ -10,6 +10,7 @@ import ErrorBoundary from 'src/sdk/error/ErrorBoundary'
 import TestProvider from 'src/sdk/tests'
 import { uiActions, uiEffects, uiInitialState } from 'src/sdk/ui'
 import { useSiteUrl } from 'src/sdk/useSiteUrl'
+import NProgress from 'nextjs-progressbar'
 import type { AppProps } from 'next/app'
 
 import storeConfig from '../../store.config'
@@ -35,6 +36,7 @@ function App({ Component, pageProps }: AppProps) {
                 mode="optimistic"
                 onValidateCart={validateCart as any} // TODO: fix here
               >
+                <NProgress />
                 <Layout>
                   <DefaultSeo
                     defaultTitle={title}
