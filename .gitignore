@@ -59,7 +59,6 @@ src/typings/
 
 # gatsby files
 .cache/
-public
 
 # next files
 .next
@@ -76,3 +75,6 @@ yarn-error.log
 
 # lighthouse CI autogen files
 .lighthouseci
+
+# bundleStats
+bundle-stats.html

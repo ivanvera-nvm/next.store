@@ -10,6 +10,7 @@ import ErrorBoundary from 'src/sdk/error/ErrorBoundary'
 import TestProvider from 'src/sdk/tests'
 import { uiActions, uiEffects, uiInitialState } from 'src/sdk/ui'
 import { useSiteUrl } from 'src/sdk/useSiteUrl'
+import NProgress from 'nextjs-progressbar'
 import type { AppProps } from 'next/app'
 
 import storeConfig from '../../store.config'
@@ -28,13 +29,14 @@ function App({ Component, pageProps }: AppProps) {
           <UIProvider
             initialState={uiInitialState}
             actions={uiActions}
-            effects={uiEffects as any} // TODO: fix here
+            effects={uiEffects}
           >
             <SessionProvider initialState={{ channel: storeConfig.channel }}>
               <CartProvider
                 mode="optimistic"
                 onValidateCart={validateCart as any} // TODO: fix here
               >
+                <NProgress color="#E31C58" />
                 <Layout>
                   <DefaultSeo
                     defaultTitle={title}
