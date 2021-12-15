@@ -35,7 +35,7 @@ describe('Home Page Seo', () => {
     cy.get('link[rel="canonical"]')
       .should('exist')
       .should(($link) => {
-        expect($link.attr('href')).to.eq(`https://${window.location.host}/`)
+        expect($link.attr('href')).to.eq(`https://${window.location.host}`)
       })
   })
 
@@ -118,7 +118,7 @@ describe('Product Page Seo', () => {
         const [...jsons] = $el.map((idx) => JSON.parse($el[idx].innerHTML))
 
         jsons.forEach((x) => {
-          expect(x['@context']).to.eq('https://schema.org')
+          expect(x['@context']).to.include('https://schema.org')
         })
 
         expect(jsons.find((json) => json['@type'] === 'Product')).to.not.null
@@ -210,7 +210,7 @@ describe('Collection Page Seo', () => {
         const [...jsons] = $el.map((idx) => JSON.parse($el[idx].innerHTML))
 
         jsons.forEach((x) => {
-          expect(x['@context']).to.eq('https://schema.org')
+          expect(x['@context']).to.include('https://schema.org')
         })
 
         expect(jsons.find((json) => json['@type'] === 'BreadcrumbList')).to.not
@@ -267,7 +267,7 @@ describe('Filtered Collection Page Seo', () => {
         const [...jsons] = $el.map((idx) => JSON.parse($el[idx].innerHTML))
 
         jsons.forEach((x) => {
-          expect(x['@context']).to.eq('https://schema.org')
+          expect(x['@context']).to.include('https://schema.org')
         })
 
         expect(jsons.find((json) => json['@type'] === 'BreadcrumbList')).to.not

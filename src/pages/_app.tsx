@@ -5,6 +5,7 @@ import { DefaultSeo, SiteLinksSearchBoxJsonLd } from 'next-seo'
 import NProgress from 'nextjs-progressbar'
 import React from 'react'
 import type { AppProps } from 'next/app'
+import { useRouter } from 'next/router'
 
 import Layout from 'src/Layout'
 import AnalyticsHandler from 'src/sdk/analytics'
@@ -22,6 +23,7 @@ const {
 } = storeConfig
 
 function App({ Component, pageProps }: AppProps) {
+  const { locale } = useRouter()
   const siteUrl = useSiteUrl()
 
   return (
@@ -33,7 +35,9 @@ function App({ Component, pageProps }: AppProps) {
             actions={uiActions}
             effects={uiEffects}
           >
-            <SessionProvider initialState={{ channel: storeConfig.channel }}>
+            <SessionProvider
+              initialState={{ channel: storeConfig.channel, locale }}
+            >
               <CartProvider<CartItem>
                 mode="optimistic"
                 onValidateCart={validateCart}

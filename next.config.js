@@ -11,6 +11,10 @@ const nextConfig = {
       'storecomponents.vtexassets.com',
     ],
   },
+  i18n: {
+    locales: ['en-US'],
+    defaultLocale: 'en-US',
+  },
 }
 
 const getConfig = withBundleStats({
