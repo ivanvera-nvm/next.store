@@ -23,7 +23,7 @@ module.exports = {
 
   // Lighthouse CI
   lighthouse: {
-    server: process.env.BASE_SITE_URL || 'http://localhost:9000',
+    server: process.env.BASE_SITE_URL || 'http://localhost:3000',
     pages: {
       home: '/',
       pdp: '/navel-oranges-grown-large-fresh-fruit-880320/p',
