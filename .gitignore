@@ -39,6 +39,9 @@ jspm_packages/
 # Typescript v1 declaration files
 src/typings/
 
+# Typescript artifacts
+*.tsbuildinfo
+
 # Optional npm cache directory
 .npm
 
@@ -57,6 +60,9 @@ src/typings/
 # gatsby files
 .cache/
 public
+
+# next files
+.next
 
 # Mac files
 .DS_Store
