@@ -13,7 +13,7 @@ module.exports = {
 
   // Production URLs
   storeUrl: 'https://www.vtex-base1.tk',
-  checkoutUrl: 'https://chk.vtex-base1.tk/checkout',
+  checkoutUrl: 'https://storeframework.vtexcommercestable.com.br/checkout',
 
   site: {
     title: 'Fashion Store',
