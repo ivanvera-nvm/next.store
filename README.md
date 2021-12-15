@@ -60,7 +60,7 @@ Kickoff your store with this boilerplate. This starter ships with the main Fasts
 
 ## 🧐 What's inside?
 
-A quick look at the top-level files and directories you'll see in a Gatsby project.
+A quick look at the top-level files and directories you'll see in a FastStore project.
 
     ./
     ├── node_modules
@@ -70,8 +70,6 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
     ├── .prettierignore
     ├── .prettierrrc
     ├── .eslintrc
-    ├── gatsby-config.js
-    ├── gatsby-node.js
     ├── LICENSE
     └── yarn.lock
     ├── package.json
@@ -276,7 +274,7 @@ function MySection {
 ```
 
 ## 🖊️ Styling Components
-This starter uses [Tailwind CSS](https://tailwindcss.com/) for styling. If you want, you can remove it and use other solutions. Both Gatsby and Store UI support many different CSS frameworks, like [emotion](https://emotion.sh/docs/introduction), [stitches](https://stitches.dev/docs/introduction) or even no CSS framework at all. Check the supported frameworks at [the NextJS website](https://nextjs.org/docs/basic-features/built-in-css-support)
+This starter uses [Tailwind CSS](https://tailwindcss.com/) for styling. If you want, you can remove it and use other solutions. Both Next.JS and FastStore UI support many different CSS frameworks, like [emotion](https://emotion.sh/docs/introduction), [stitches](https://stitches.dev/docs/introduction) or even no CSS framework at all. Check the supported frameworks at [the NextJS website](https://nextjs.org/docs/basic-features/built-in-css-support)
 This guide covers best practices and patterns to use when styling with Tailwind.
 
 Tailwind is a utility-first CSS framework. The goal of this starter is to make it possible for developers to use Tailwind themes to change the look of the store. To accomplish this, a few things need to be respected:
@@ -294,7 +292,7 @@ This means we can staticaly analyse your code in search of bugs and secure your 
 $ yarn develop
 ```
 
-Now, after the gatsby development server is up and running, open another terminal and run
+Now, after the Next.JS development server is up and running, open another terminal and run
 
 ```sh
 $ yarn generate
