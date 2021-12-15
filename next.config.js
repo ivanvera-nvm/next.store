@@ -1,10 +1,16 @@
 const withBundleStats = require('next-plugin-bundle-stats')
 
-module.exports = withBundleStats({
+const nextConfig = {
   images: {
     domains: [
       'storeframework.vtexassets.com',
       'storecomponents.vtexassets.com',
     ],
   },
+}
+
+const getConfig = withBundleStats({
+  outDir: '../public',
 })
+
+module.exports = getConfig(nextConfig)

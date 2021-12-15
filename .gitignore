@@ -75,3 +75,6 @@ yarn-error.log
 
 # lighthouse CI autogen files
 .lighthouseci
+
+# bundleStats
+bundle-stats.html
