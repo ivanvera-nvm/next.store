@@ -61,7 +61,7 @@ function ProductSummary({ product, index, className }: Props) {
 
   return (
     <Link {...linkProps}>
-      <a {...linkProps}>
+      <a {...linkProps} className={className}>
         <Image
           className="w-full"
           width={360}
