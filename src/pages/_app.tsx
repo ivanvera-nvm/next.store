@@ -2,10 +2,10 @@ import 'src/styles/global.css'
 
 import { CartProvider, SessionProvider, UIProvider } from '@faststore/sdk'
 import { DefaultSeo, SiteLinksSearchBoxJsonLd } from 'next-seo'
+import { useRouter } from 'next/router'
 import NProgress from 'nextjs-progressbar'
 import React from 'react'
 import type { AppProps } from 'next/app'
-import { useRouter } from 'next/router'
 
 import Layout from 'src/Layout'
 import AnalyticsHandler from 'src/sdk/analytics'
@@ -42,28 +42,27 @@ function App({ Component, pageProps }: AppProps) {
                 onValidateCart={validateCart}
               >
                 <NProgress color="#E31C58" />
+                <DefaultSeo
+                  defaultTitle={title}
+                  description={description}
+                  titleTemplate={titleTemplate}
+                  openGraph={{
+                    type: 'website',
+                    url: siteUrl,
+                    title,
+                    description,
+                  }}
+                />
+                <SiteLinksSearchBoxJsonLd
+                  url={siteUrl}
+                  potentialActions={[
+                    {
+                      target: `${siteUrl}/s/?q={search_term_string}`,
+                      queryInput: 'required name=search_term_string',
+                    },
+                  ]}
+                />
                 <Layout>
-                  <DefaultSeo
-                    defaultTitle={title}
-                    description={description}
-                    titleTemplate={titleTemplate}
-                    openGraph={{
-                      type: 'website',
-                      url: siteUrl,
-                      title,
-                      description,
-                    }}
-                  />
-                  <SiteLinksSearchBoxJsonLd
-                    url={siteUrl}
-                    potentialActions={[
-                      {
-                        target: `${siteUrl}/s/?q={search_term_string}`,
-                        queryInput: 'required name=search_term_string',
-                      },
-                    ]}
-                  />
-
                   <Component {...pageProps} />
                 </Layout>
               </CartProvider>

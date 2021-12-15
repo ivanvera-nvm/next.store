@@ -26,7 +26,12 @@ export const uiActions: UIActions = {
   }),
 }
 
-export const uiEffects = (dispatch: Dispatch<any>) => ({
+type Action = {
+  type: string
+  data?: unknown
+}
+
+export const uiEffects = (dispatch: Dispatch<Action>) => ({
   pushToast: (toast: Toast) => dispatch({ type: 'PUSH_TOAST', data: toast }),
   popToast: () => dispatch({ type: 'POP_TOAST' }),
 })
