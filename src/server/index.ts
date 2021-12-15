@@ -17,17 +17,15 @@ import type { ExecutionResult } from 'graphql'
 // import type { FormatErrorHandler } from '@envelop/core'
 
 import persisted from '../../@generated/graphql/persisted.json'
-import { api, channel, platform } from '../../store.config'
+import storeConfig from '../../store.config'
 
 const persistedQueries = new Map(Object.entries(persisted))
 
-/* eslint-disable react-hooks/rules-of-hooks */
-// TODO: Fix this as any
-const apiOptions: any = {
-  platform,
-  account: api.storeId,
-  environment: api.environment,
-  channel,
+const apiOptions = {
+  platform: storeConfig.platform,
+  account: storeConfig.api.storeId,
+  environment: storeConfig.api.environment,
+  channel: storeConfig.channel,
 }
 
 const apiSchema = storeApiGetSchema(apiOptions)
