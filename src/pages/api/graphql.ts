@@ -1,5 +1,6 @@
-import { execute } from 'src/server'
 import type { NextApiRequest, NextApiResponse } from 'next'
+
+import { execute } from 'src/server'
 
 const parseRequest = (req: NextApiRequest) => {
   const { operationName, variables, query } =

@@ -2,6 +2,7 @@ import { gql } from '@vtex/graphql-utils'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useMemo } from 'react'
+
 import Button from 'src/components/ui/Button'
 import DiscountBadge from 'src/components/ui/DiscountBadge'
 import { useBuyButton } from 'src/sdk/cart/useBuyButton'
@@ -61,7 +62,7 @@ function ProductSummary({ product, index, className }: Props) {
 
   return (
     <Link {...linkProps}>
-      <a {...linkProps} className={className}>
+      <a className={className}>
         <Image
           className="w-full"
           width={360}

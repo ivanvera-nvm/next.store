@@ -1,6 +1,7 @@
 import { useCallback } from 'react'
 import { sendAnalyticsEvent, useSession } from '@faststore/sdk'
 import type { CurrencyCode } from '@faststore/sdk'
+
 import type {
   AnalyticsCartItem,
   VTEXAddToCartEvent,

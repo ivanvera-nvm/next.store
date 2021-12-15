@@ -53,6 +53,7 @@
     "axe-core": "^4.3.3",
     "cypress-axe": "^0.13.0",
     "eslint": "^7.22.0",
+    "eslint-config-next": "^12.0.7",
     "eslint-config-vtex-react": "^7.0.0",
     "husky": "^5.2.0",
     "is-ci": "^3.0.0",

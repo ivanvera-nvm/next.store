@@ -2,6 +2,7 @@ import { parseSearchState, SearchProvider } from '@faststore/sdk'
 import { NextSeo } from 'next-seo'
 import { useRouter } from 'next/router'
 import React, { useMemo } from 'react'
+
 import ProductGallery from 'src/components/sections/ProductGallery'
 import { ITEMS_PER_PAGE } from 'src/constants'
 import { useApplySearchState } from 'src/sdk/search/state'

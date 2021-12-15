@@ -1,6 +1,7 @@
 import { usePagination, useSearch } from '@faststore/sdk'
 import { NextSeo } from 'next-seo'
 import React from 'react'
+
 import FacetedFilter from 'src/components/search/FacetedFilter'
 import Sort from 'src/components/search/Sort'
 

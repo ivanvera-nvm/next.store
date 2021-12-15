@@ -5,6 +5,7 @@ import type {
   RemoveFromCartParams,
   Item as AnalyticsItem,
 } from '@faststore/sdk'
+
 import type { CartItem } from 'src/sdk/cart/validate'
 
 type AdditionalItemProperties = {

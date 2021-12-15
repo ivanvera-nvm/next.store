@@ -1,5 +1,6 @@
 import { useSearch } from '@faststore/sdk'
 import { gql } from '@vtex/graphql-utils'
+
 import { useQuery } from 'src/sdk/graphql/useQuery'
 import type {
   ProductGalleryQueryQuery as Query,

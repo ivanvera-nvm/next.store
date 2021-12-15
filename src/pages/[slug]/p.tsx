@@ -3,6 +3,8 @@ import { gql } from '@vtex/graphql-utils'
 import { BreadcrumbJsonLd, NextSeo, ProductJsonLd } from 'next-seo'
 import { useRouter } from 'next/router'
 import React from 'react'
+import type { GetStaticPaths, GetStaticProps } from 'next'
+
 import ProductDetails from 'src/components/sections/ProductDetails'
 import { useSiteUrl } from 'src/sdk/useSiteUrl'
 import { execute } from 'src/server'
@@ -10,7 +12,6 @@ import type {
   ProductPageQueryQuery,
   ProductPageQueryQueryVariables,
 } from '@generated/graphql'
-import type { GetStaticPaths, GetStaticProps } from 'next'
 
 function Page(props: ProductPageQueryQuery) {
   const { product } = props
