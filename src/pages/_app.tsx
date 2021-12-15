@@ -29,7 +29,7 @@ function App({ Component, pageProps }: AppProps) {
           <UIProvider
             initialState={uiInitialState}
             actions={uiActions}
-            effects={uiEffects as any} // TODO: fix here
+            effects={uiEffects}
           >
             <SessionProvider initialState={{ channel: storeConfig.channel }}>
               <CartProvider
