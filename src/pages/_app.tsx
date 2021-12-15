@@ -20,6 +20,7 @@ import storeConfig from '../../store.config'
 
 const {
   site: { title, description, titleTemplate },
+  channel,
 } = storeConfig
 
 function App({ Component, pageProps }: AppProps) {
@@ -35,9 +36,7 @@ function App({ Component, pageProps }: AppProps) {
             actions={uiActions}
             effects={uiEffects}
           >
-            <SessionProvider
-              initialState={{ channel: storeConfig.channel, locale }}
-            >
+            <SessionProvider initialState={{ channel, locale }}>
               <CartProvider<CartItem>
                 mode="optimistic"
                 onValidateCart={validateCart}
