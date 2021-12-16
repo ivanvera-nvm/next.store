@@ -5,18 +5,18 @@ import Logo from 'src/components/ui/Logo'
 
 const links = [
   {
-    href: '/apparel',
+    href: '/apparel-and-accesories',
     name: 'Apparel',
   },
   {
-    href: '/food-and-beverage',
-    name: 'Food and beverage',
+    href: '/office',
+    name: 'Office',
   },
 ]
 
 function Navlinks() {
   return (
-    <nav>
+    <nav className="flex items-center justify-around min-h-[48px] w-full sm:w-fit">
       <Link href="/">
         <a className="m-1">
           <Logo />
