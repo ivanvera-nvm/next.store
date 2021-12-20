@@ -16,9 +16,9 @@ module.exports = {
   checkoutUrl: 'https://storeframework.vtexcommercestable.com.br/checkout',
 
   site: {
-    title: 'Fashion Store',
-    description: 'Fashion Demo Store',
-    titleTemplate: '%s | Fashion Store',
+    title: 'Next Store',
+    description: 'Next Demo Store',
+    titleTemplate: '%s | Next Store',
   },
 
   // Lighthouse CI
