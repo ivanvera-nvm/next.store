@@ -15,6 +15,8 @@ const nextConfig = {
     locales: ['en-US'],
     defaultLocale: 'en-US',
   },
+  // Leave to CDN (Vercel, Netlify etc) to decide how to compress
+  compress: false,
 }
 
 const getConfig = withBundleStats({
