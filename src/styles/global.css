@@ -13,3 +13,63 @@
 [data-store-button] svg {
   @apply w-6 h-6
 }
+
+/* Search Input */
+[data-store-search-input] {
+  @apply flex items-center;
+  @apply bg-white border border-gray-400;
+}
+
+[data-store-search-input] [data-store-input] {
+  @apply flex-grow
+}
+
+/* Carousel */
+[data-store-carousel] {
+  @apply relative;
+}
+
+[data-carousel-controls] {
+  @apply absolute top-[45%] w-full;
+}
+
+[data-store-button][data-arrow] {
+  @apply bg-white rounded-full absolute text-black;
+}
+
+[data-arrow="left"] {
+  @apply left-5;
+}
+
+[data-arrow="right"] {
+  @apply right-5;
+}
+
+[data-carousel-bullets] {
+  @apply absolute bottom-0 w-full flex justify-center;
+}
+
+[data-carousel-item] {
+  @apply relative aspect-[1.2/1] sm:aspect-[2.5/1]
+}
+
+/* Bullets */
+[data-store-bullets] {
+  @apply justify-center flex;
+}
+
+[data-store-bullets] [data-bullet-item] {
+  @apply inline-block;
+}
+
+[data-store-bullets] [data-bullet-item][data-store-button] {
+  @apply cursor-pointer inline-block outline-none;
+  @apply p-0 m-3 border-0 rounded-full;
+  @apply h-1 w-12;
+  @apply sm:h-3 sm:w-3;
+  @apply bg-gray-400;
+}
+
+[data-store-bullets] [data-bullet-item][aria-selected="true"] {
+  @apply bg-secondary-700;
+}
