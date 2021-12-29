@@ -60,13 +60,15 @@ function ProductDetails({ product: staleProduct }: Props) {
   return (
     <div>
       <h2>{variantName}</h2>
-      <Image
-        width={500}
-        height={500}
-        src={img.url}
-        alt={img.alternateName}
-        priority
-      />
+      <div className="relative aspect-[1.4/1] w-full sm:w-[50%]">
+        <Image
+          layout="fill"
+          className="object-cover"
+          src={img.url}
+          alt={img.alternateName}
+          priority
+        />
+      </div>
       <div className="line-through">{formattedListPrice}</div>
       <div className="min-h-[2rem]">{isValidating ? '' : formattedPrice}</div>
       <Button {...buyProps} disabled={isValidating}>

@@ -4,9 +4,9 @@ import React, { useCallback } from 'react'
 import type { SearchInputProps as UISearchInputProps } from '@faststore/ui'
 import { useRouter } from 'next/router'
 
-declare type SearchInputProps = Omit<UISearchInputProps, 'onSubmit'>
+declare type SearchInputProps = Partial<UISearchInputProps>
 
-const useSearch = () => {
+const useDoSearch = (onSubmit?: UISearchInputProps['onSubmit']) => {
   const router = useRouter()
 
   return useCallback(
@@ -19,15 +19,22 @@ const useSearch = () => {
       )
 
       router.push(`${pathname}${search}`)
+      onSubmit?.(term)
     },
-    [router]
+    [onSubmit, router]
   )
 }
 
 function SearchInput(props: SearchInputProps) {
-  const doSearch = useSearch()
+  const doSearch = useDoSearch(props.onSubmit)
 
-  return <UISearchInput onSubmit={doSearch} {...props} />
+  return (
+    <UISearchInput
+      {...props}
+      placeholder="What are you looking for?"
+      onSubmit={doSearch}
+    />
+  )
 }
 
 export default SearchInput
