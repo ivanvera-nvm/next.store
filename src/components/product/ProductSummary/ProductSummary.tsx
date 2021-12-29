@@ -65,7 +65,6 @@ function ProductSummary({ product, index, className }: Props) {
       <a className={className} {...linkProps}>
         <Image
           className="w-full object-cover"
-          sizes="50vw, (min-width: 40em) 12vw"
           width={180}
           height={150}
           src={img.url}
