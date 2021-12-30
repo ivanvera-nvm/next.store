@@ -10,6 +10,7 @@ const nextConfig = {
       'storeframework.vtexassets.com',
       'storecomponents.vtexassets.com',
     ],
+    minimumCacheTTL: 3600 * 24 * 365, // 1 year in seconds
   },
   i18n: {
     locales: ['en-US'],

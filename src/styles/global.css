@@ -73,3 +73,12 @@
 [data-store-bullets] [data-bullet-item][aria-selected="true"] {
   @apply bg-secondary-700;
 }
+
+/* Price */
+[data-store-price][data-variant="listing"] {
+  @apply line-through text-sm text-gray-500;
+}
+
+[data-store-price][data-variant="spot"] {
+  @apply text-base font-bold;
+}

@@ -18,9 +18,9 @@ describe('Cart Sidebar', () => {
     cy.visit(pages.home, options)
     cy.waitForHydration()
 
-    cy.getById('cart-toggle').first().click()
+    cy.getById('cart-toggle').filter(':visible').first().click()
     cy.getById('cart-sidebar').should('exist')
-    cy.getById('cart-toggle').first().click()
+    cy.getById('cart-toggle').filter(':visible').first().click()
     cy.getById('cart-sidebar').should('not.exist')
   })
 })

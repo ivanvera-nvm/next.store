@@ -59,7 +59,9 @@ function ProductDetails({ product: staleProduct }: Props) {
 
   return (
     <div>
-      <h2>{variantName}</h2>
+      <h2>
+        {name} {variantName}
+      </h2>
       <div className="relative aspect-[1.4/1] w-full sm:w-[50%]">
         <Image
           layout="fill"

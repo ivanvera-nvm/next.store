@@ -3,9 +3,8 @@
 /**
  * Cypress tests for PLP
  */
-
-import { options } from '../global'
 import { cypress } from '../../store.config'
+import { options } from '../global'
 
 const { pages } = cypress
 
@@ -133,10 +132,8 @@ describe('Infinite Scroll pagination', () => {
               // Number of products after showMore is clicked should be higher
               .should('have.length.gte', before)
               .last()
-              .within(() => {
-                cy.getById('buy-button').then(($btn) => {
-                  skuIdBeforeNavigate = $btn.attr('data-sku')
-                })
+              .then(($link) => {
+                skuIdBeforeNavigate = $link.attr('data-sku')
               })
               .click()
               .then(() => {
@@ -145,10 +142,10 @@ describe('Infinite Scroll pagination', () => {
               })
               .then(() => {
                 cy.go('back')
-                  .getById('buy-button')
+                  .getById('product-link')
                   .last()
-                  .then(($btn) => {
-                    const skuIdAfterNavigate = $btn.attr('data-sku')
+                  .then(($link) => {
+                    const skuIdAfterNavigate = $link.attr('data-sku')
 
                     expect(skuIdBeforeNavigate).to.eq(skuIdAfterNavigate)
                   })
@@ -175,7 +172,7 @@ describe('Infinite Scroll pagination', () => {
           })
           .getById('product-link')
           .first()
-          .scrollIntoView()
+          .scrollIntoView({ offset: { top: -100 } })
           .location()
           .should(($loc) => {
             expect($loc.search).includes('page=0')

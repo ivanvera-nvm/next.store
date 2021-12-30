@@ -1,3 +1,4 @@
+import { Card, CardActions, CardContent, CardImage, Price } from '@faststore/ui'
 import { gql } from '@vtex/graphql-utils'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -5,6 +6,7 @@ import React, { useMemo } from 'react'
 
 import Button from 'src/components/ui/Button'
 import DiscountBadge from 'src/components/ui/DiscountBadge'
+import CartIcon from 'src/components/ui/Icons/Cart'
 import { useBuyButton } from 'src/sdk/cart/useBuyButton'
 import { useFormattedPrice } from 'src/sdk/product/useFormattedPrice'
 import { useProductLink } from 'src/sdk/product/useProductLink'
@@ -61,32 +63,56 @@ function ProductSummary({ product, index, className }: Props) {
   })
 
   return (
-    <Link href={linkProps.href}>
-      <a className={className} {...linkProps}>
-        <Image
-          className="w-full object-cover"
-          width={180}
-          height={150}
-          src={img.url}
-          alt={img.alternateName}
-        />
-        <div>{name}</div>
-        <div className="flex justify-between">
-          <span
-            data-testid="list-price"
-            data-value={listPrice}
-            className="line-through"
-          >
-            {useFormattedPrice(listPrice)}
-          </span>
-          <span data-testid="price" data-value={spotPrice}>
-            {useFormattedPrice(spotPrice)}
-          </span>
-          <DiscountBadge listPrice={listPrice} spotPrice={spotPrice} />
-        </div>
-        <Button {...buyProps}>Add to cart</Button>
-      </a>
-    </Link>
+    <Card className="p-4 max-w-[290px] shadow-md hover:shadow-lg">
+      <Link href={linkProps.href}>
+        <a className={className} {...linkProps}>
+          <CardImage>
+            <Image
+              className="w-full object-cover"
+              width={258}
+              height={258}
+              src={img.url}
+              alt={img.alternateName}
+            />
+          </CardImage>
+          <CardContent>
+            <div className="overflow-hidden whitespace-nowrap text-clip">
+              {name}
+            </div>
+
+            <div className="flex items-center justify-start gap-2">
+              <Price
+                formatter={useFormattedPrice}
+                value={listPrice}
+                variant="listing"
+                data-testid="list-price"
+                data-value={listPrice}
+              />
+
+              <Price
+                formatter={useFormattedPrice}
+                value={spotPrice}
+                variant="spot"
+                data-testid="price"
+                data-value={spotPrice}
+              />
+            </div>
+
+            <div className="my-2">
+              <DiscountBadge listPrice={listPrice} spotPrice={spotPrice} />
+            </div>
+          </CardContent>
+        </a>
+      </Link>
+      <CardActions className="mt-4">
+        <Button
+          {...buyProps}
+          className="bg-secondary-700 text-white flex gap-1 text-base font-bold rounded"
+        >
+          <CartIcon className="fill-white p-1" /> Add
+        </Button>
+      </CardActions>
+    </Card>
   )
 }
 

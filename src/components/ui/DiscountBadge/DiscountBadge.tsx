@@ -15,7 +15,11 @@ const DiscountBadge = ({ listPrice, spotPrice }: Props) => {
     return <></>
   }
 
-  return <Badge>{discountPercent}%</Badge>
+  return (
+    <Badge className="bg-green-100 rounded-full text-center max-w-fit p-2 text-xs font-bold">
+      {discountPercent}% OFF
+    </Badge>
+  )
 }
 
 export default DiscountBadge

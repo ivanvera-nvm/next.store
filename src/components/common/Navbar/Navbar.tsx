@@ -47,15 +47,15 @@ const links = [
   },
   {
     name: 'Appliances',
-    href: '/appliances',
+    href: '/kitchen-and-home-appliances/appliances',
   },
   {
     name: 'Gadgets',
-    href: '/gadgets',
+    href: '/computer-and-software/gadgets',
   },
   {
     name: 'Accessories',
-    href: '/accessories',
+    href: '/apparel-and-accessories/accessories',
   },
 ]
 

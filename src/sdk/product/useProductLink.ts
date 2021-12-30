@@ -77,6 +77,7 @@ export const useProductLink = ({ index, product }: ProductLinkOptions) => {
       href: `/${slug}/p`,
       onClick,
       'data-testid': 'product-link',
+      'data-sku': product.id,
     }
   }, [slug, code, product, index])
 }
