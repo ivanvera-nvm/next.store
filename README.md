@@ -312,9 +312,9 @@ This project has strict performance budgets. Right out of the box, this project 
 
 ## Adding third party scripts
 
-Adding third-party scripts to a webpage usually makes it slow. To maintain great performance while third-party scripts are added, this project uses [Partytown](https://github.com/BuilderIO/partytown/), a lazy-load library that helps relocate intensive scripts into a web worker and off of the main thread.
+Adding third-party scripts to a webpage usually makes it slow. To maintain great performance while adding third-party scripts, this project uses [Partytown](https://github.com/BuilderIO/partytown/), a lazy-load library that helps relocate intensive scripts into a web worker and off of the main thread.
 
-To add scripts using Partytown, add the type="text/partytown" to the script tag and make sure to add it before the Partytown script or component. Some third-party scripts execute expensive computations that may require some time to run, making pages few slow. If that's the case, wrap those in a function and reference it on the Partytown forward prop. By doing this, Partytown will run this function on a web worker so it doesn't block the main thread.
+To add scripts using Partytown, add the `type="text/partytown"` to the script tag - make sure to add it before the Partytown script or component. Some third-party scripts execute expensive computations that may require some time to run, making pages feel slow. If that's the case, wrap those in a function and reference it on the Partytown `forward` prop. By doing this, Partytown will run this function on a web worker so it doesn't block the main thread.
 
 ```tsx
 import Document, { Html, Head, Main, NextScript } from 'next/document'
@@ -349,4 +349,4 @@ class MyDocument extends Document {
 export default MyDocument
 ```
 
-For more information about integrating third-party scripts: [Partytown Wiki](https://github.com/BuilderIO/partytown/wiki)
+For more information about integrating third-party scripts: [Partytown Wiki](https://github.com/BuilderIO/partytown/wiki).
