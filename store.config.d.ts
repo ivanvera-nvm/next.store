@@ -29,6 +29,10 @@ const x: {
   cypress: {
     pages: Record<string, string>
   }
+
+  analytics: {
+    gtmContainerId?: string
+  }
 }
 
 export default x
