@@ -8,7 +8,7 @@ const { platform, analytics } = storeConfig
 const partytownForward: string[] = []
 
 if (platform === 'vtex') {
-  partytownForward.push('NavigationCapture.sendEvent')
+  partytownForward.push('sendrc')
 }
 
 if (!analytics.gtmContainerId) {
@@ -28,11 +28,23 @@ class MyDocument extends Document {
             />
           )}
           {platform === 'vtex' && (
-            <script
-              async
-              type="text/partytown"
-              src="https://io.vtex.com.br/rc/rc.js"
-            />
+            <>
+              <script
+                key="rc.js-init"
+                type="text/partytown"
+                dangerouslySetInnerHTML={{
+                  __html: `
+          window.sendrc=function(en,ed){window.NavigationCapture.sendEvent(en,ed)}
+          `,
+                }}
+              />
+              <script
+                async
+                key="rc.js-script"
+                type="text/partytown"
+                src="https://io.vtex.com.br/rc/rc.js"
+              />
+            </>
           )}
           <Partytown forward={partytownForward} />
         </Head>

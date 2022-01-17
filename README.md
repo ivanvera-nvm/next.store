@@ -327,7 +327,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <script>
+          <script type="text/partytown">
             window.expensiveFunction = function() {/* expensive computation used by custom-script */}
           </script>
           <script

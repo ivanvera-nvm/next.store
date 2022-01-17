@@ -1,6 +1,4 @@
 interface Window extends Window {
   dataLayer: any[];
-  NavigationCapture: {
-    sendEvent: (...args: any[]) => void
-  }
+  sendrc: (eventName: string, eventValues?: any) => void
 }
